@@ -11,7 +11,7 @@ module.exports = function (customer) {
 		res = 'No customer data.';
 	}
 	return {
-		icon: 'https://storage.googleapis.com/senders-images/cards/shopify.png',
+		icon: 'https://storage.googleapis.com/senders-images/cards/stripe.png',
 		text: res,
 		link: link
 	};

@@ -1,5 +1,5 @@
 {
-  "name": "@adonf98/senders-shopify",
+  "name": "@adonf98/senders-stripe",
   "version": "0.0.3",
   "description": "Search and Get Stripe information about customers",
   "main": "index.js",
