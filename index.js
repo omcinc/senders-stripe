@@ -92,7 +92,7 @@ module.exports.account = function (oauthToken) {
 	return new Promise(function (resolve, reject) {
 		getAccount(makeConfig(oauthToken)).subscribe(res => {
 			resolve({
-				loginName: res.displayName,
+				loginName: res.data[0].business_name + ' (' + res.data[0].email + ')',
 				accountUrl: 'https://dashboard.stripe.com/dashboard'
 			});
 		}, error => {
