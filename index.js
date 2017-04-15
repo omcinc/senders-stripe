@@ -83,7 +83,7 @@ function makeConfig(oauthToken) {
 	return {
 		baseURL: "https://api.stripe.com/v1/",
 		headers: {
-			"Authorization": "Basic " + oauthToken.accessToken
+			"Authorization": "Bearer " + oauthToken.accessToken
 		}
 	};
 }
