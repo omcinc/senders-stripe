@@ -168,5 +168,5 @@ function getAccount(config) {
 }
 
 function searchCustomer(config, email) {
-	return Rx.Observable.fromPromise(axios.get('/customers?query=email:' + email, config)).map(res => res.data);
+	return Rx.Observable.fromPromise(axios.get('/search?type=customers&query=email:' + email, config)).map(res => res.data[0]);
 }
