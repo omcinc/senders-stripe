@@ -38,7 +38,8 @@ module.exports.authorize = function (params, options) {
 		const code = params.code;
 		axios.post('https://connect.stripe.com/oauth/token', {
 			client_secret: options.clientSecret,
-			code: code
+			code: code,
+			grant_type: "authorization_code"
 		}).then(res => {
 			resolve({
 				refreshToken: res.data.refresh_token,
