@@ -55,10 +55,12 @@ module.exports.authorize = function (params, options) {
 	});
 };
 
-module.exports.refresh = function (oauthToken) {
+module.exports.refresh = function (oauthToken, options) {
 	return new Promise(function (resolve, reject) {
 		console.log('Using refresh token: ' + oauthToken.refreshToken);
-		axios.post('https://connect.stripe.com/oauth/token?grant_type=refresh_token&refresh_token=' + oauthToken.refreshToken, {}).then(res => {
+		axios.post('https://connect.stripe.com/oauth/token?grant_type=refresh_token&refresh_token=' + oauthToken.refreshToken, {
+			client_secret: options.clientSecret
+		}).then(res => {
 			if (res.data.access_token) {
 				resolve({
 					accessToken: res.data.access_token,
