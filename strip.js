@@ -9,6 +9,7 @@ module.exports = function (customer) {
 		link = 'https://dashboard.stripe.com/test/customers/' + customer.id;
 	} else {
 		res = 'No customer data.';
+		link = 'https://dashboard.stripe.com';
 	}
 	return {
 		icon: 'https://storage.googleapis.com/senders-images/cards/stripe.png',

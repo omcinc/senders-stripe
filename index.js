@@ -16,7 +16,11 @@ const strip = require('./strip');
  */
 module.exports.oauth = function (params, options) {
 	const scope = 'read_only';
-	return 'https://connect.stripe.com/oauth/authorize?response_type=code&client_id=' + options.clientId + '&scope=' + scope;
+	return 'https://connect.stripe.com/oauth/authorize?' +
+		+ 'response_type=code'
+		+'&client_id=' + options.clientId
+		+'&redirect_uri=' + options.redirectUri
+		+ '&scope=' + scope;
 };
 
 /**
@@ -168,5 +172,5 @@ function getAccount(config) {
 }
 
 function searchCustomer(config, email) {
-	return Rx.Observable.fromPromise(axios.get('/search?type=customers&query=email:' + email, config)).map(res => res.data[0]);
+	return Rx.Observable.fromPromise(axios.get('/search?type=customers&query=email:' + email, config)).map(res => res.data.data[0]);
 }
