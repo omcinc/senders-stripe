@@ -1,0 +1,22 @@
+{
+  "id": "yKhpaKVEaqgUygGv3UHnZN1kWMTjapYN",
+  "object": "account",
+  "business_logo": "https://s3.amazonaws.com/stripe-uploads/yKhpaKVEaqgUygGv3UHnZN1kWMTjapYNmerchant-icon-1461848276546-logo_evercontact_seul.png",
+  "business_name": "Evercontact",
+  "business_primary_color": "#128b8c",
+  "business_url": "http://www.evercontact.com",
+  "charges_enabled": true,
+  "country": "FR",
+  "default_currency": "usd",
+  "details_submitted": true,
+  "display_name": "Evercontact",
+  "email": "dev.admin@onemore.company",
+  "managed": false,
+  "metadata": {},
+  "statement_descriptor": "EVERCONTACT",
+  "support_email": "billing@evercontact.com",
+  "support_phone": "",
+  "support_url": "http://support.evercontact.com/help_center",
+  "timezone": "Etc/UTC",
+  "transfers_enabled": true
+}

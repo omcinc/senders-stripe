@@ -110,7 +110,7 @@ module.exports.fetch = function (oauthToken, email) {
 		const config = makeConfig(oauthToken);
 		searchCustomer(config, email)
 			.subscribe(customer => {
-				resolve(strip(customer));
+				resolve(strip(customer, oauthToken.metadata.livemode));
 			}, error => {
 				reject(normalizeError(error));
 			});
