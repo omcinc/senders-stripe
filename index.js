@@ -16,7 +16,7 @@ const strip = require('./strip');
  */
 module.exports.oauth = function (params, options) {
 	const scope = 'read_only';
-	return 'https://connect.stripe.com/oauth/authorize?' +
+	return 'https://connect.stripe.com/oauth/authorize?'
 		+ 'response_type=code'
 		+'&client_id=' + options.clientId
 		+'&redirect_uri=' + options.redirectUri
