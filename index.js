@@ -94,7 +94,7 @@ function makeConfig(oauthToken) {
 
 module.exports.account = function (oauthToken) {
 	return new Promise(function (resolve, reject) {
-		getAccount(makeConfig(oauthToken)).subscribe(res => {
+		getAccount(makeConfig(oauthToken), oauthToken.metadata.stripe_user_id).subscribe(res => {
 			resolve({
 				loginName: res.data[0].business_name + ' (' + res.data[0].email + ')',
 				accountUrl: 'https://dashboard.stripe.com/dashboard'
@@ -167,8 +167,8 @@ function normalizeError(internalError) {
 /**
  * See https://stripe.com/docs/api/curl#retrieve_account
  */
-function getAccount(config) {
-	return Rx.Observable.fromPromise(axios.get('/accounts', config)).map(res => res.data);
+function getAccount(config, account) {
+	return Rx.Observable.fromPromise(axios.get('/accounts/' + account, config)).map(res => res.data);
 }
 
 function searchCustomer(config, email) {
