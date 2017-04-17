@@ -28,7 +28,7 @@ module.exports = function (customer, liveMode) {
 		link = 'https://dashboard.stripe.com';
 	}
 	return {
-		icon: 'https://storage.googleapis.com/senders-images/cards/stripe.png',
+		icon: 'https://storage.googleapis.com/senders-images/cards/stripe.png?v=3',
 		text: res,
 		link: link
 	};
