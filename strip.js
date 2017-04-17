@@ -13,7 +13,7 @@ module.exports = function (customer, liveMode) {
 				var item = subscription.items.data[0];
 				if (item.plan) {
 					const plan = item.plan;
-					subscriptionStr = 'Subscribed to ' + plan.name + ' - ' + subscription.status + ' - ' + currency(plan.amount / 100, plan.currency) + ' /' + plan.interval;
+					subscriptionStr = '\nSubscribed to ' + plan.name + ' - ' + subscription.status + ' - ' + currency(plan.amount / 100, plan.currency) + ' /' + plan.interval;
 					if (subscription.cancel_at_period_end) {
 						const ts = subscription.current_period_end;
 						subscriptionStr += '. Ends on ' + moment(new Date(ts * 1000)).format('ll');
